@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Lê Đặng Hoàng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            min-height: 100vh;
+        }
+
+        /* Left Sidebar */
+        .sidebar {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 30px;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: #3498db;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            color: white;
+            border: 5px solid #3498db;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .title {
+            text-align: center;
+            color: #3498db;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .contact-item i {
+            width: 25px;
+            color: #3498db;
+            margin-right: 10px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .about-text {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            background: rgba(255,255,255,0.2);
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: #3498db;
+            border-radius: 5px;
+        }
+
+        .language-item {
+            background: rgba(255,255,255,0.1);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px;
+        }
+
+        .content-section {
+            margin-bottom: 35px;
+        }
+
+        .content-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .education-item, .training-item {
+            margin-bottom: 20px;
+        }
+
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .edu-title {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .edu-date {
+            color: #3498db;
+            font-weight: 600;
+        }
+
+        .edu-school {
+            color: #666;
+            font-style: italic;
+        }
+
+        .edu-location {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .personal-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .certification {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .cert-year {
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .experience-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid #3498db;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .exp-company {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .exp-location {
+            color: #3498db;
+        }
+
+        .exp-desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .reference-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .ref-name {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .ref-position {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .ref-contact {
+            font-size: 14px;
+            color: #3498db;
+        }
+
+        .certification-text {
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                margin: 0;
+            }
+            
+            .sidebar {
+                padding: 30px 20px;
+            }
+            
+            .main-content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="profile-img">
+                <i class="fas fa-user"></i>
+            </div>
+            
+            <div class="name">Lê Đặng Hoàng</div>
+            <div class="title">Web Designer & Frontend Developer</div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>26/01/2005</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>TP.HCM, Việt Nam</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>0793543059</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>hoangld1971@ut.edu.vn</span>
+                </div>
+            </div>
+            
+            <div class="section-title">About me</div>
+            <div class="about-text">
+                Xin chào, tôi tên là Lê Đặng Hoàng. Tôi là một người chuyên thiết kế giao diện web đã có 2 năm kinh nghiệm trong suốt quá trình học đại học hiện giờ. Tôi mong bên phía công ty có thể xem xét hồ sơ phê duyệt của tôi và có thể cho tôi một cơ hội để được thử việc ạ. Xin cảm ơn!
+            </div>
+            
+            <div class="section-title">Skills</div>
+            <div class="skill-item">
+                <div class="skill-name">Thiết kế giao diện web</div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 90%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">Frontend Development</div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 85%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">HTML</div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 90%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">CSS</div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 85%"></div>
+                </div>
+            </div>
+            
+            <div class="section-title">Languages</div>
+            <div class="language-item">
+                <i class="fas fa-globe"></i> <strong>Tiếng Anh:</strong> Thành thạo
+            </div>
+            <div class="language-item">
+                <i class="fas fa-globe"></i> <strong>Tiếng Nhật:</strong> Thành thạo
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="content-section">
+                <div class="content-title">Education</div>
+                
+                <div class="education-item">
+                    <div class="edu-header">
+                        <div class="edu-title">Đại học Công nghệ Thông tin</div>
+                        <div class="edu-date">2023 - 2027</div>
+                    </div>
+                    <div class="edu-school">Chuyên ngành: Công Nghệ Thông Tin</div>
+                    <div class="edu-location">TP.HCM, Việt Nam</div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <div class="content-title">Personal Information</div>
+                <div class="personal-info-grid">
+                    <div><span class="info-label">Họ và tên:</span> Lê Đặng Hoàng</div>
+                    <div><span class="info-label">Ngày sinh:</span> 26/01/2005</div>
+                    <div><span class="info-label">Nơi sống:</span> TP.HCM, Việt Nam</div>
+                    <div><span class="info-label">Ngành học:</span> Công Nghệ Thông Tin</div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <div class="content-title">Professional Training</div>
+                
+                <div class="certification">
+                    <div class="cert-year">2023 - 2024</div>
+                    <div>Khóa học Thiết kế Web UI/UX</div>
+                </div>
+                
+                <div class="certification">
+                    <div class="cert-year">2024</div>
+                    <div>Chứng chỉ Frontend Development</div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <div class="content-title">Experience</div>
+                
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div class="exp-company">Freelance Web Designer</div>
+                        <div class="exp-location">Remote</div>
+                    </div>
+                    <div class="exp-date" style="color: #3498db; margin-bottom: 8px;">2022 - Present</div>
+                    <div class="exp-desc">
+                        Thiết kế giao diện web cho các dự án freelance. Làm việc với HTML, CSS để tạo ra các website responsive và thân thiện với người dùng.
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div class="exp-company">Dự án cá nhân</div>
+                        <div class="exp-location">TP.HCM</div>
+                    </div>
+                    <div class="exp-date" style="color: #3498db; margin-bottom: 8px;">2023 - 2024</div>
+                    <div class="exp-desc">
+                        Phát triển các dự án web cá nhân, áp dụng kiến thức đã học vào thực tế. Tích lũy 2 năm kinh nghiệm trong lĩnh vực thiết kế web.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <div class="content-title">References</div>
+                
+                <div class="reference-item">
+                    <div class="ref-name">Giảng viên Bộ môn Công Nghệ Thông Tin</div>
+                    <div class="ref-position">Đại học Công nghệ Thông tin</div>
+                    <div class="ref-contact">Email: contact@ut.edu.vn</div>
+                </div>
+            </div>
+            
+            <div class="certification-text">
+                Tôi xin cam đoan tất cả thông tin cung cấp ở trên là chính xác và trung thực. Tôi chịu trách nhiệm hoàn toàn về những thông tin đã cung cấp.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
